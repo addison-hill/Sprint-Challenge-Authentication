@@ -1,8 +1,4 @@
-module.exports = {
-  validateUser
-};
-
-function validateUser(req, res, next) {
+module.exports = (req, res, next) => {
   const { username, password } = req.body;
 
   if (username && password) {
@@ -10,4 +6,4 @@ function validateUser(req, res, next) {
   } else {
     res.status(400).json({ message: "Please provide username and password" });
   }
-}
+};
